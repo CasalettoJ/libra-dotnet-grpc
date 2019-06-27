@@ -8,7 +8,7 @@ dotnet add package grpc.core
 dotnet add package grpc.tools
 dotnet add package google.protobuf
 ```
-3. Take the .proto files from the libra project and place them in the directory
+3. Take the .proto files from the libra project and place them in the project directory somewhere (I put them in libra_proto)
 4. Edit your .csproj file, make sure to add `PrivateAssets="All"` to the grpc.tools import if it's not already set somehow.  (read why here: https://grpc.io/blog/grpc-dotnet-build/)
 5. Add the Protobuf files to the .csproj file: `<Protobuf Include="**/*.proto" ProtoRoot="xx" />` setting `ProtoRoot` to the directory in your project you are storing your .proto files
 6. At this point you should be able to run `dotnet build` which will include protobuf .CS file generation from the protobuf/grpc packages added.  When it builds, there should be a ton of generated .cs files in `obj/` to prove it is working.
