@@ -25,7 +25,7 @@ find $LIBRA -name "*.proto" \
     -execdir cp "{}" "$sourcedir/libra_proto" \; \
     -execdir sed -i '' 's#import \"shared/#import \"#g' "$sourcedir/libra_proto/{}" \;
 
-echo "Building proto c# files"
-find "libra_proto" -name "*.proto" \
-    -execdir echo "Building {}" \; \
-    -execdir protoc --grpc_out="." --csharp_out="." --csharp_opt=file_extension=.g.cs --plugin=protoc-gen-grpc="$NUGET/packages/grpc.tools/$grpctoolsvr/tools/$grpctoolsos/grpc_csharp_plugin" "{}" \;
+# echo "Building proto c# files" 
+# find "libra_proto" -name "*.proto" \
+#     -execdir echo "Building {}" \; \
+#     -execdir protoc --grpc_out="." --csharp_out="." --csharp_opt=file_extension=.g.cs --plugin=protoc-gen-grpc="$NUGET/packages/grpc.tools/$grpctoolsvr/tools/$grpctoolsos/grpc_csharp_plugin" "{}" \;

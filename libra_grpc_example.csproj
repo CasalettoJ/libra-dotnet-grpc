@@ -9,10 +9,14 @@
     <PackageReference Include="google.protobuf" Version="3.8.0" />
     <PackageReference Include="grpc" Version="1.21.0" />
     <PackageReference Include="grpc.core" Version="1.21.0" />
-    <PackageReference Include="grpc.tools" Version="1.21.0">
+    <PackageReference Include="grpc.tools" PrivateAssets="All" Version="1.21.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="**/*.proto" ProtoRoot="libra_proto" />
+  </ItemGroup> 
 
 </Project>
